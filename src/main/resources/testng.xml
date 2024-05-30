@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name="CucumberTests">
+        <classes>
+            <class name="org.example.runner.CucumberRunnerTests"/>
+        </classes>
+    </test>
+</suite>
