@@ -24,14 +24,12 @@ public class CartPageSteps {
         this.waitUtils = new WaitUtils(driver);
     }
 
-
     @And("user navigates to Cart page")
     public void navigateToCartPage(){
         cartPage.getCartBtn().click();
         WebElement cartTitle = cartPage.getCartTitle();
         waitUtils.waitForVisibility(cartTitle);
     }
-
 
     @And("user remove the products from the cart")
     public void remove_products_from_card(DataTable dataTable){

@@ -4,7 +4,7 @@ Feature: User can successfully add and remove products from the cart. Can comple
   Background:
     Given user is logged in
 
-  Scenario: Card verification
+  Scenario: Cart verification
     When the product page is opened
     And user add products to the card
       | product               |

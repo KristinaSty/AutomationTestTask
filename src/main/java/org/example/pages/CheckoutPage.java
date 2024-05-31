@@ -2,13 +2,12 @@ package org.example.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CheckoutPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public CheckoutPage(WebDriver driver){
         this.driver = driver;
@@ -40,10 +39,12 @@ public class CheckoutPage {
         }
         return null;
     }
+
     public WebElement getCheckoutBtn(){
         WebElement checkoutBtn = driver.findElement(By.id("checkout"));
         return checkoutBtn;
     }
+
     public WebElement getContinueBtn(){
         WebElement continueBtn = driver.findElement(By.id("continue"));
         return continueBtn;

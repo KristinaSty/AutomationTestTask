@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 public class CommonPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     public CommonPage(WebDriver driver){
         this.driver = driver;
     }
@@ -14,10 +14,12 @@ public class CommonPage {
         WebElement usernameField = driver.findElement(By.id("user-name"));
         return usernameField;
     }
+
     public WebElement enterPassword(){
         WebElement passwordField = driver.findElement(By.id("password"));
         return  passwordField;
     }
+
     public WebElement clickLoginBtn(){
         WebElement loginBtn = driver.findElement(By.id("login-button"));
         return loginBtn;
@@ -41,5 +43,4 @@ public class CommonPage {
         WebElement swagLabsTitle = driver.findElement(By.className("login_logo"));
         return swagLabsTitle;
     }
-
 }

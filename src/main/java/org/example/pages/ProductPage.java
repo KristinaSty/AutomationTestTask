@@ -7,12 +7,11 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class ProductPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public ProductPage(WebDriver driver){
         this.driver = driver;
     }
-
 
     public WebElement getProductTitle(){
         WebElement productTitle = driver.findElement(By.xpath("//div[@class='header_secondary_container']/span[@class='title']"));

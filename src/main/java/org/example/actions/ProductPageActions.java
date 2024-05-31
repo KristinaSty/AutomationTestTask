@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class ProductPageActions {
-    private WebDriver driver;
-    private WaitUtils waitUtils;
-    private ProductPage productPage;
+    private final WebDriver driver;
+    private final WaitUtils waitUtils;
+    private final ProductPage productPage;
 
     public ProductPageActions(WebDriver driver){
         this.driver = driver;
@@ -24,22 +24,17 @@ public class ProductPageActions {
         }
     }
 
-    public void addProductToCard(String product) {
+    public void addProductToCart(String product) {
         WebElement addBtn = productPage.addProductBtn(product);
         if (addBtn != null) {
             addBtn.click();
         }
     }
 
-    public void verifyCardCounter(int expectedCount) {
+    public void verifyCartCounter(int expectedCount) {
         int counter = productPage.getCartCounter();
         if (counter != 0){
             Assert.assertEquals(counter, expectedCount, "Incorrect cart counter");
         }
     }
-
-
-
-
-
 }

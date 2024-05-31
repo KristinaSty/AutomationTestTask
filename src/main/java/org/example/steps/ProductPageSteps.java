@@ -1,6 +1,5 @@
 package org.example.steps;
 import org.example.actions.ProductPageActions;
-import org.example.pages.ProductPage;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -13,12 +12,9 @@ public class ProductPageSteps {
     private final WebDriver driver;
     private final ProductPageActions productPageActions;
 
-    private final ProductPage productPage;
-
 
     public ProductPageSteps(){
         this.driver = SetUps.driver;
-        this.productPage = new ProductPage(driver);
         this.productPageActions = new ProductPageActions(driver);
     }
 
@@ -32,7 +28,7 @@ public class ProductPageSteps {
         List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> row : rows){
             String product = row.get("product");
-            productPageActions.addProductToCard(product);
+            productPageActions.addProductToCart(product);
         }
     }
 
@@ -49,8 +45,7 @@ public class ProductPageSteps {
                      NumberFormatException e){
                 cartCounter = 0;
             }
-            productPageActions.verifyCardCounter(cartCounter);
+            productPageActions.verifyCartCounter(cartCounter);
         }
     }
-
 }

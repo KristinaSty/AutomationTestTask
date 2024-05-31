@@ -17,6 +17,7 @@ public class CommonPageActions {
         this.commonPage = new CommonPage(driver);
         this.waitUtils = new WaitUtils(driver);
     }
+
      public void login(){
         WebElement userNameInput = commonPage.enterUserName();
         userNameInput.sendKeys(USERNAME);
@@ -47,5 +48,4 @@ public class CommonPageActions {
 
         }
     }
-
 }

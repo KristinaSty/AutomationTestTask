@@ -8,7 +8,6 @@ public class CommonPageSteps {
     private final WebDriver driver;
     private final CommonPageActions commonPageActions;
 
-
     public CommonPageSteps(){
         this.driver = SetUps.driver;
         this.commonPageActions = new CommonPageActions(driver);
@@ -24,5 +23,4 @@ public class CommonPageSteps {
     public void logging_out() {
         commonPageActions.logout();
     }
-
 }

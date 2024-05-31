@@ -2,7 +2,6 @@ package org.example.steps;
 import org.example.actions.CheckoutPageActions;
 import org.example.actions.WaitUtils;
 import org.example.pages.CheckoutPage;
-import org.example.actions.CartPageActions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebDriver;
@@ -18,14 +17,12 @@ public class CheckoutPageSteps {
     private final WaitUtils waitUtils;
     private final CheckoutPageActions checkoutPageActions;
     private final CheckoutPage checkoutPage;
-    private final CartPageActions cartPageActions;
 
 
     public CheckoutPageSteps(){
         this.driver = SetUps.driver;
         this.checkoutPageActions = new CheckoutPageActions(driver);
         this.checkoutPage = new CheckoutPage(driver);
-        this.cartPageActions = new CartPageActions(driver);
         this.waitUtils = new WaitUtils(driver);
     }
 
@@ -34,7 +31,6 @@ public class CheckoutPageSteps {
         checkoutPage.getCheckoutBtn().click();
         WebElement checkoutTitle = checkoutPage.getCheckoutInformationTitle();
         waitUtils.waitForVisibility(checkoutTitle);
-
     }
 
     @And("user submit the checkout form")
@@ -90,7 +86,6 @@ public class CheckoutPageSteps {
         waitUtils.waitForVisibility(completeTitle);
     }
 
-
     @Then("the order is successful")
     public void verify_successful_order(DataTable dataTable){
         List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
@@ -100,8 +95,4 @@ public class CheckoutPageSteps {
             checkoutPageActions.verifySuccessfulOrder(successTitle, successMessage);
         }
     }
-
-
-
-
 }
