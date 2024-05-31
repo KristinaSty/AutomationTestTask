@@ -3,8 +3,8 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = {"src/test/resources/features"},
-        glue = {"com.example.steps"},
+        features = {"{path-to-the-project}/src/main/resources/features"},
+        glue = {"org.example.steps"},
         plugin = {}
 )
 public class CucumberRunnerTests extends AbstractTestNGCucumberTests {
